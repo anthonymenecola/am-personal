@@ -208,6 +208,29 @@ main {
     margin: 16px 0;
 }
 
+#project picture img {
+    border-radius: 12px;
+}
+
+/* selection style */
+::-webkit-selection {
+    background: var(--accentPrimary);
+    color: var(--text-default);
+    text-shadow: none;
+  }
+  
+  ::-moz-selection {
+    background: var(--accentPrimary);
+    color: var(--text-default);
+    text-shadow: none;
+  }
+  
+  ::selection {
+    background: var(--accentPrimary);
+    color: var(--text-default);
+    text-shadow: none;
+  }
+
 @media only screen and (max-width: 600px) {
     #project {
         grid-template-columns: 100%;
