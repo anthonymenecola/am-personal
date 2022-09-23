@@ -169,6 +169,7 @@ main {
 #project {
     display: grid;
     grid-template-columns: repeat(2, 50%);
+    margin-bottom: 180px;
 }
 
 .project-info {
