@@ -72,6 +72,13 @@ table {
     }   
 }
 
+[color-scheme="light"] {
+    --background: var(--background-light);
+    --surface-subdued: var(--surface-subdued-light);
+    --text-default: var(--text-default-light);
+    --text-subdued: var(--text-subdued-light);
+}
+
 @media(prefers-color-scheme: dark) {
     [data-theme="dark"]{
         --background: var(--background-dark);
@@ -79,6 +86,13 @@ table {
         --text-default: var(--text-default-dark);
         --text-subdued: var(--text-subdued-dark);
     }   
+}
+
+[color-scheme="dark"] {
+    --background: var(--background-dark);
+    --surface-subdued: var(--surface-subdued-dark);
+    --text-default: var(--text-default-dark);
+    --text-subdued: var(--text-subdued-dark);
 }
 
 body {
@@ -118,8 +132,9 @@ header {
 .theme {
     grid-column-start: 16;
     justify-self: end;
+    place-items: center;
     background-color: var(--surface-subdued);
-    border-radius: 6px;
+    border-radius: 50%;
     width: 32px;
     height: 32px;
     border: none;
@@ -132,6 +147,29 @@ header {
     -o-transition: background-color 0.3s ease-in-out;
 }
 
+.theme:is(:hover, :focus) {
+    background-color: var(--accentPrimary);
+    transition: background-color 0.3s ease-in-out;
+    -moz-transition: background-color 0.3s ease-in-out;
+    -webkit-transition: background-color 0.3s ease-in-out;
+    -o-transition: background-color 0.3s ease-in-out;
+}
+
+
+@keyframes sunRotate {
+    0% {
+        transform: rotate(0deg);
+	}
+	100% {
+        transform: rotate(360deg);
+	}
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .sun-icon {
+        animation: 7s infinite linear sunRotate;
+    }
+}
 .logo {
     display: grid;
     grid-column-start: 1;
@@ -141,14 +179,6 @@ header {
 .logo-fill {
     color: var(--surface-subdued);
     fill: var(--surface-subdued);
-}
-
-.theme:is(:hover, :focus) {
-    background-color: var(--accentPrimary);
-    transition: background-color 0.3s ease-in-out;
-    -moz-transition: background-color 0.3s ease-in-out;
-    -webkit-transition: background-color 0.3s ease-in-out;
-    -o-transition: background-color 0.3s ease-in-out;
 }
 
 .background {
