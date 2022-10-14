@@ -49,11 +49,7 @@
                 <li>Info</li>
             </ul>
             
-            <button class="theme">
-                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="var(--background)">
-                    <path d="M10 0a1 1 0 0 1 1 1v2a1 1 0 1 1-2 0V1a1 1 0 0 1 1-1Zm4 10a4 4 0 1 1-8 0 4 4 0 0 1 8 0Zm-3 7a1 1 0 1 0-2 0v2a1 1 0 1 0 2 0v-2Zm9-7a1 1 0 0 1-1 1h-2a1 1 0 1 1 0-2h2a1 1 0 0 1 1 1ZM3 11a1 1 0 1 0 0-2H1a1 1 0 1 0 0 2h2Zm13.364 5.364a1 1 0 0 1-1.414 0l-.707-.707a1 1 0 0 1 1.414-1.414l.707.707a1 1 0 0 1 0 1.414ZM4.344 5.757a1 1 0 0 0 1.413-1.414l-.707-.707A1 1 0 1 0 3.636 5.05l.707.707Zm-.708 10.607a1 1 0 0 1 0-1.414l.707-.707a1 1 0 0 1 1.414 1.414l-.707.707a1 1 0 0 1-1.414 0Zm10.607-12.02a1 1 0 0 0 1.414 1.413l.707-.707a1 1 0 1 0-1.414-1.414l-.707.707Z"/>
-                  </svg>
-            </button>
+            <button class="theme" role="switch" aria-label="light/dark mode"></button>
         </header>
         <main>
             <p class="intro">
@@ -115,7 +111,9 @@
         </main>
 	</body>
 
-    <script>//identify the toggle switch HTML element
+    <script type="module" src="main.js"></script>
+    <!-- <script>
+    //identify the toggle switch HTML element
         const toggleSwitch = document.querySelector('#theme-switch input[type="checkbox"]');
         
         //function that changes the theme, and sets a localStorage variable to track the theme between page loads
@@ -138,5 +136,5 @@
         if (document.documentElement.getAttribute("data-theme") == "dark"){
             toggleSwitch.checked = true;
         }
-    </script>
+    </script> -->
 </html>

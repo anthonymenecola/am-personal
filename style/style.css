@@ -72,13 +72,6 @@ table {
     }   
 }
 
-[color-scheme="light"] {
-    --background: var(--background-light);
-    --surface-subdued: var(--surface-subdued-light);
-    --text-default: var(--text-default-light);
-    --text-subdued: var(--text-subdued-light);
-}
-
 @media(prefers-color-scheme: dark) {
     [data-theme="dark"]{
         --background: var(--background-dark);
@@ -86,6 +79,13 @@ table {
         --text-default: var(--text-default-dark);
         --text-subdued: var(--text-subdued-dark);
     }   
+}
+
+[color-scheme="light"] {
+    --background: var(--background-light);
+    --surface-subdued: var(--surface-subdued-light);
+    --text-default: var(--text-default-light);
+    --text-subdued: var(--text-subdued-light);
 }
 
 [color-scheme="dark"] {
@@ -147,7 +147,7 @@ header {
     -o-transition: background-color 0.3s ease-in-out;
 }
 
-.theme:is(:hover, :focus) {
+.theme:hover {
     background-color: var(--accentPrimary);
     transition: background-color 0.3s ease-in-out;
     -moz-transition: background-color 0.3s ease-in-out;
@@ -161,13 +161,13 @@ header {
         transform: rotate(0deg);
 	}
 	100% {
-        transform: rotate(360deg);
+        transform: rotate(90deg);
 	}
 }
 
 @media (prefers-reduced-motion: no-preference) {
-    .sun-icon {
-        animation: 7s infinite linear sunRotate;
+    .sun-icon:hover {
+        animation: 1s sunRotate;
     }
 }
 .logo {
